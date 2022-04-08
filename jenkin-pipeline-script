@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+    tools {
+        terraform 'terraform'
+    }
+    stages {
+        stage('Git Checkout'){
+            steps{
+                git branch: 'dev', url: 'https://github.com/mudit097/terraform.tf.git'
+            }
+        }
+        stage('Terraform init'){
+            steps{
+                sh 'terraform init'
+            }
+        }
+        stage('Terraform apply or destroy'){
+            steps{
+                sh "${params.terraformcoice}"
+            }
+        }
+    }
+}
