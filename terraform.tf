@@ -17,7 +17,7 @@ resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
 }
 resource "aws_s3_bucket" "bukets" {
-  bucket = "my-tf-test-bucket-for-task1"
+  bucket = "my-tf-test-bucket-for-task23"
 
   tags = {
     Name        = "My bucket"
